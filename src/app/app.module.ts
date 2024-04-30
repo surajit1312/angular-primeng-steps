@@ -1,25 +1,32 @@
-import { NgModule } from '@angular/core';
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {RouterModule} from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppComponent }   from './app.component';
+
 import { StepsModule } from 'primeng/steps';
 import { ToastModule } from 'primeng/toast';
-import { AppComponent } from './app.component';
-import { MessageService } from 'primeng/api';
+
+import { StepsComponent } from './steps/steps.component';
+
+import { SeatComponent } from './seat/seat.component';
+import  { PersonalComponent } from './personal/personal.component';
+import { PaymentComponent } from './payment/payment.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [ AppComponent, StepsComponent, SeatComponent, PersonalComponent, PaymentComponent ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    BrowserAnimationsModule,
     StepsModule,
     ToastModule,
+    AppRoutingModule
   ],
-  providers: [
-    MessageService
-  ],
-  bootstrap: [AppComponent]
+  
+  bootstrap:    [ AppComponent ]
 })
+
 export class AppModule { }
